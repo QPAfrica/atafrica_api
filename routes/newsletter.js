@@ -16,193 +16,338 @@ router.post("/", async (req, res) => {
 
     const messageData = {
         to: req.body.email,
-        from: "traders@ft9ja.com",
+        from: "content@atafrica.org",
         subject: "Newsletter Subscription Confirmation",
-        html: `<!DOCTYPE html>
-        <html lang="en">
-        
-        <head>
-            <meta charset="UTF-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
-                rel="stylesheet" />
-        </head>
-        
-        <body style="background: #ededed; display: grid; padding: 10px 0 10px 0">
-            <div style="background: #ffffff; max-width: 600px; width: 100%; padding: 50px 0; margin-left: auto; margin-right: auto;">
-                <div style="display: grid; background: white">
-                    <div style="
-                        width: 90%;
-                        display: grid;
-                        margin: 0 auto auto;
-                      ">
-                        <img src="https://res.cloudinary.com/ddlupbcws/image/upload/v1680791936/logo_2_ft9ja_1_fsh9iz.png"
-                            alt="" style="width: 201px; margin: 0 auto 0 auto" />
-                    </div>
-                    <div style="
-                   display: grid;
-                    background-color: white;
-                    width: 100%;
-                    height: 293px;
-                    ">
-                        <img src="https://res.cloudinary.com/ddlupbcws/image/upload/v1687433941/Group_317_q0ls1r.png" alt=""
-                            style="width: 222px; margin: auto;" />
-                    </div>
-                    <div style="
-                        margin: 41px auto;
-                        display: grid;
-                        gap: 24px;
-                        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-                        padding-bottom: 63px;
-                        width: 90%;
-                      ">
-                        <h1 style="
-                            font-family: 'Open Sans', sans-serif;
-                            font-size: 25px;
-                            font-weight: 700;
-                        ">Newsletter Subscription Confirmation</h1>
-                        <p style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                        ">
-                            Dear Trader</span>
-                        </p>
-                        <p style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                        ">
-                            We would like to extend a warm welcome to you as a new subscriber to our newsletter! We are thrilled
-                            that you have decided to join our community and receive updates on the latest news, offers, and
-                            promotions from FT9ja Hero.
-                        </p>
-                        <p style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                        ">
-                            We confirm that we have received your subscription request, and you will start receiving our
-                            newsletters from the next issue onwards. We promise to provide you with the latest information about
-                            our products, services, and industry trends.
-        
-                        </p>
-                        <p style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                        ">
-                            We take your privacy seriously and promise to protect your personal information. You can review our
-                            Privacy Policy by visiting <span style="color: #008000; font-weight: 500"><a target="_blank"
-                                    style="color: inherit"
-                                    href="https://docs.google.com/document/d/1_Avh3t3fzpju1ZHB6MfBLqjjC0iuLfPMm8CfY1lQXKo/edit">Here</a></span>.
-                        </p>
-                        <p style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 16px;
-                          font-weight: 400;
-                        ">
-                            Thank you for choosing to subscribe to our newsletter. We are excited to have you as a member of our
-                            community!
-                        </p>
-                        <div style="
-                          font-family: 'Open Sans', sans-serif;
-                          font-size: 18px;
-                          font-weight: 400;
-                        ">
-                            <span style="margin-bottom: 1000px; font-family: 'Open Sans', sans-serif;
-                            font-size: 16px;
-                            font-weight: 400;">Regards,</span>
-                            <br>
-                            <span style="font-family: 'Open Sans', sans-serif;
-                            font-size: 16px;
-                            font-weight: 400;">FT9ja Team</span>
-                        </div>
-                    </div>
-                    <footer style="display: grid">
-                        <div style="
-                          display: flex;
-                          align-items: center;
-                          gap: 8px;
-                          margin: 0 auto 20px auto;
-                        ">
-                            <div style="
-                            background: white;
-                            display: grid;
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                          ">
-                                <a href="https://web.facebook.com/ft9ja" style="margin: 2px 0 auto 1px;">
-        
-                                    <img src="https://res.cloudinary.com/ddlupbcws/image/upload/v1682101673/Group_310_ztnxh0.png"
-                                        alt="" style="width: 90%" />
-                                </a>
-                            </div>
-                            <div style="
-                            background: white;
-                            display: grid;
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                          ">
-                                <a href="https://www.instagram.com/ft9ja.official/" style="margin: auto 0 auto 2px;">
-                                    <img src="https://res.cloudinary.com/ddlupbcws/image/upload/v1682101673/Group_313_rs9ibk.png"
-                                        alt="" style="width: 90%;" />
-                                </a>
-                            </div>
-                            <div style="
-                            background: white;
-                            display: grid;
-                            width: 30px;
-                            height: 30px;
-                            border-radius: 50%;
-                          ">
-                                <a href=" https://wa.me/2348138462394" style="margin: auto 0 auto 3px;">
-        
-                                    <img src="https://res.cloudinary.com/ddlupbcws/image/upload/v1682101673/Icons_ng04ca.png"
-                                        alt="" style="width: 90%;" />
-                                </a>
-                            </div>
-                        </div>
-                        <div style="display: grid; gap: 12px">
-                            <p style="
-                            font-family: 'Open Sans', sans-serif;
-                            font-size: 14px;
-                            font-weight: 400;
-                            text-align: center;
-                          ">
-                                Lagos: 30a Oladimeji Alo Street, Lekki Phase 1. <br> <span>(Appointments only)</span>
-                            </p>
-                            <p style="
-                            font-family: 'Open Sans', sans-serif;
-                            font-size: 14px;
-                            font-weight: 400;
-                            text-align: center;
-                          ">
-                                Abuja: 18 Queen Elizabeth Street, Asokoro. <br> <span>(Appointments only)</span>
-                            </p>
-                            <p style="
-                            font-family: 'Open Sans', sans-serif;
-                            font-size: 14px;
-                            font-weight: 400;
-                            text-align: center;
-                          ">
-                                You can also connect to our community of Traders here <br>
-                                <span style="color: #008000; font-weight: 500">
-                                    <a href="https://www.community.ft9ja.com/" target="_blank" style="color: inherit">
-                                        https://www.community.ft9ja.com/
-                                    </a>
-                                </span>
-                            </p>
-                        </div>
-                    </footer>
+        html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+        <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+              <!--[if !mso]><!-->
+              <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+              <!--<![endif]-->
+              <!--[if (gte mso 9)|(IE)]>
+              <xml>
+                <o:OfficeDocumentSettings>
+                  <o:AllowPNG/>
+                  <o:PixelsPerInch>96</o:PixelsPerInch>
+                </o:OfficeDocumentSettings>
+              </xml>
+              <![endif]-->
+              <!--[if (gte mso 9)|(IE)]>
+          <style type="text/css">
+            body {width: 700px;margin: 0 auto;}
+            table {border-collapse: collapse;}
+            table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+            img {-ms-interpolation-mode: bicubic;}
+          </style>
+        <![endif]-->
+              <style type="text/css">
+            body, p, div {
+              font-family: arial,helvetica,sans-serif;
+              font-size: 12px;
+            }
+            body {
+              color: #939598;
+            }
+            body a {
+              color: #939598;
+              text-decoration: none;
+            }
+            p { margin: 0; padding: 0; }
+            table.wrapper {
+              width:100% !important;
+              table-layout: fixed;
+              -webkit-font-smoothing: antialiased;
+              -webkit-text-size-adjust: 100%;
+              -moz-text-size-adjust: 100%;
+              -ms-text-size-adjust: 100%;
+            }
+            img.max-width {
+              max-width: 100% !important;
+            }
+            .column.of-2 {
+              width: 50%;
+            }
+            .column.of-3 {
+              width: 33.333%;
+            }
+            .column.of-4 {
+              width: 25%;
+            }
+            ul ul ul ul  {
+              list-style-type: disc !important;
+            }
+            ol ol {
+              list-style-type: lower-roman !important;
+            }
+            ol ol ol {
+              list-style-type: lower-latin !important;
+            }
+            ol ol ol ol {
+              list-style-type: decimal !important;
+            }
+            @media screen and (max-width:480px) {
+              .preheader .rightColumnContent,
+              .footer .rightColumnContent {
+                text-align: left !important;
+              }
+              .preheader .rightColumnContent div,
+              .preheader .rightColumnContent span,
+              .footer .rightColumnContent div,
+              .footer .rightColumnContent span {
+                text-align: left !important;
+              }
+              .preheader .rightColumnContent,
+              .preheader .leftColumnContent {
+                font-size: 80% !important;
+                padding: 5px 0;
+              }
+              table.wrapper-mobile {
+                width: 100% !important;
+                table-layout: fixed;
+              }
+              img.max-width {
+                height: auto !important;
+                max-width: 100% !important;
+              }
+              a.bulletproof-button {
+                display: block !important;
+                width: auto !important;
+                font-size: 80%;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+              }
+              .columns {
+                width: 100% !important;
+              }
+              .column {
+                display: block !important;
+                width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+              }
+              .social-icon-column {
+                display: inline-block !important;
+              }
+            }
+          </style>
+              <!--user entered Head Start--><!--End Head user entered-->
+            </head>
+            <body>
+              <center class="wrapper" data-link-color="#939598" data-body-style="font-size:12px; font-family:arial,helvetica,sans-serif; color:#939598; background-color:#0d0d0d;">
+                <div class="webkit">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#0d0d0d">
+                    <tr>
+                      <td valign="top" bgcolor="#0d0d0d" width="100%">
+                        <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
+                          <tr>
+                            <td width="100%">
+                              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                  <td>
+                                    <!--[if mso]>
+            <center>
+            <table><tr><td width="700">
+          <![endif]-->
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:700px;" align="center">
+                                              <tr>
+                                                <td role="modules-container" style="padding:0px 0px 0px 0px; color:#939598; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+            <tr>
+              <td role="module-content">
+                <p></p>
+              </td>
+            </tr>
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="416bc8bf-b58e-40da-9f88-e6372ef66f7a" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:18px 0px 5px 0px; line-height:12px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598">Email not displaying correctly?</span></div>
+        <div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #fc700a"><em><strong>View it</strong></em></span><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598"> in your browser.</span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="1cf588b6-50bb-4e96-9094-78072dc27db6">
+            <tbody>
+              <tr>
+                <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
+                  <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="700" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/6aabe8179b53a529/a7574dd2-c8b8-4211-8543-4a20764517c5/1232x338.png">
+                </td>
+              </tr>
+            </tbody>
+          </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
+            <tbody>
+              <tr role="module-content">
+                <td height="100%" valign="top"><table width="540" style="width:540px; border-spacing:0; border-collapse:collapse; margin:0px 80px 0px 80px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+              <tbody>
+                <tr>
+                  <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:30px 0px 30px 0px; line-height:40px; text-align:inherit; background-color:#ffffff;" height="100%" valign="top" bgcolor="#ffffff" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #151515; font-family: &quot;times new roman&quot;, times, serif; font-size: 30px">Welcome to the ATAfrica Community!</span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="dce1c135-0cce-4722-b204-271ab342fe50">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 0px 0px;" role="module-content" height="100%" valign="top" bgcolor="">
+                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0px 0px 1px 0px;" bgcolor="#9d9d9d"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ac6915ec-a120-4043-93dd-d12c843239a4">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 30px 0px;" role="module-content" bgcolor="">
+                </td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743.1.1" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Dear Subscriber,</span></div>
+        <div style="font-family: inherit; text-align: start"><br></div>
+        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Welcome to ATAfrica! We're thrilled to have you join our community of innovators, entrepreneurs, and visionaries. Thank you for subscribing to our newsletter.</span></div>
+        <div style="font-family: inherit; text-align: start"><br></div>
+        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">ATAfrica is dedicated to fostering innovation and entrepreneurship. Through our newsletter, you'll receive regular updates on industry trends, success stories, and opportunities to collaborate and grow.</span></div>
+        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Here's what you can expect from our newsletter:</span></div>
+        <ul>
+          <li color="rgb(13, 13, 13)" style="text-align: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; color: rgb(13, 13, 13); margin-left: 0px; font-size: 16px; font-size: 16px"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; list-style-position: initial; list-style-image: initial; list-style-type: disc; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0.375em; display: block; flex-direction: column; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 28px">Industry insights and thought leadership articles</span></li>
+          <li color="rgb(13, 13, 13)" style="text-align: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; color: rgb(13, 13, 13); margin-left: 0px; font-size: 16px; font-size: 16px"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; list-style-position: initial; list-style-image: initial; list-style-type: disc; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0.375em; display: block; flex-direction: column; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 28px">Success stories from startups and entrepreneurs</span></li>
+          <li color="rgb(13, 13, 13)" style="text-align: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; color: rgb(13, 13, 13); margin-left: 0px; font-size: 16px; font-size: 16px"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; list-style-position: initial; list-style-image: initial; list-style-type: disc; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0.375em; display: block; flex-direction: column; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 28px">Exclusive invitations to events and webinars</span></li>
+          <li color="rgb(13, 13, 13)" style="text-align: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; color: rgb(13, 13, 13); margin-left: 0px; font-size: 16px; font-size: 16px"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; list-style-position: initial; list-style-image: initial; list-style-type: disc; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0.375em; display: block; flex-direction: column; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; min-height: 28px">Special offers and promotions</span></li>
+        </ul>
+        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">We're committed to providing you with valuable content and resources to help you succeed in your entrepreneurial journey.</span></div>
+        <div style="font-family: inherit; text-align: start"><br></div>
+        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Feel free to reach out to us at [Add Contact email here] if you have any questions or feedback. We'd love to hear from you!</span></div>
+        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><br></div>
+        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">To stay connected with ATAfrica, follow us on [Add Social Media platforms here as a link] or visit our website via the button below:</span>&nbsp;</div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="3480c647-733b-4db9-8123-d2a2f6cc7edb">
+              <tbody>
+                <tr>
+                  <td align="center" bgcolor="" class="outer-td" style="padding:50px 0px 50px 0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
+                      <tbody>
+                        <tr>
+                        <td align="center" bgcolor="#0d0d0d" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;">
+                          <a href="" style="background-color:#0d0d0d; border:1px solid #333333; border-color:#333333; border-radius:0px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">DISCOVER MORE</a>
+                        </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743.1.1.1" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Thank you for joining us on this exciting journey. We look forward to inspiring and empowering each other to achieve greatness.</span></div>
+        <div style="font-family: inherit; text-align: start"><br></div>
+        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Best regards,</span></div>
+        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><br>
+        The ATAfrica Team</span>&nbsp;</div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table></td>
+                </tr>
+              </tbody>
+            </table></td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f0e65d7e-60e4-4192-b086-0dd194b86025">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 50px 0px;" role="module-content" bgcolor="">
+                </td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a283e807-5ef8-4ed1-9dad-501454219737.1">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 0px 0px;" role="module-content" height="100%" valign="top" bgcolor="">
+                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0px 0px 1px 0px;" bgcolor="#939598"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="social" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="67860d35-49ca-4aab-a102-9026fe6e6519">
+            <tbody>
+              <tr>
+                <td valign="top" style="padding:10px 0px 0px 0px; font-size:6px; line-height:10px; background-color:#0D0D0D;" align="center">
+                  <table align="center" style="-webkit-margin-start:auto;-webkit-margin-end:auto;">
+                    <tbody><tr align="center"><td style="padding: 0px 5px;" class="social-icon-column">
+              <a role="social-icon-link" href="https://www.facebook.com/sendgrid/" target="_blank" alt="Facebook" title="Facebook" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
+                <img role="social-icon" alt="Facebook" title="Facebook" src="https://mc.sendgrid.com/assets/social/white/facebook.png" style="height:22px; width:22px;" height="22" width="22">
+              </a>
+            </td><td style="padding: 0px 5px;" class="social-icon-column">
+              <a role="social-icon-link" href="https://twitter.com/sendgrid" target="_blank" alt="Twitter" title="Twitter" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
+                <img role="social-icon" alt="Twitter" title="Twitter" src="https://mc.sendgrid.com/assets/social/white/twitter.png" style="height:22px; width:22px;" height="22" width="22">
+              </a>
+            </td><td style="padding: 0px 5px;" class="social-icon-column">
+              <a role="social-icon-link" href="https://www.instagram.com/sendgrid/" target="_blank" alt="Instagram" title="Instagram" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
+                <img role="social-icon" alt="Instagram" title="Instagram" src="https://mc.sendgrid.com/assets/social/white/instagram.png" style="height:22px; width:22px;" height="22" width="22">
+              </a>
+            </td></tr></tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="afbcec63-8aa9-4c80-ae51-010b68fee214" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:10px 0px 0px 0px; line-height:12px; text-align:inherit; background-color:#0D0D0D;" height="100%" valign="top" bgcolor="#0D0D0D" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>OFFICE ADDRESS LINE: INPUT OFFICE ADDRESS HERE</strong></span></div>
+        <div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>CONTACT INFO: INPUT CONTACT INFORMATION HERE</strong></span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a283e807-5ef8-4ed1-9dad-501454219737">
+            <tbody>
+              <tr>
+                <td style="padding:0px 0px 20px 0px;" role="module-content" height="100%" valign="top" bgcolor="#0d0d0d">
+                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0px 0px 1px 0px;" bgcolor=""></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table></td>
+                                              </tr>
+                                            </table>
+                                            <!--[if mso]>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </center>
+                                    <![endif]-->
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
                 </div>
-            </div>
-        </body>
-        
-        </html>`
+              </center>
+            </body>
+          </html>`
     }
 
     const newEmail = new NewsletterEmails({
