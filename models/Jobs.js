@@ -7,6 +7,7 @@ const JobsSchema = new mongoose.Schema(
     location: { type: String},
     type: { type: String},
     company:{type: String},
+    mainDesc:{type:String},
     lookingDesc: { type: String },
     experienceDesc: { type: String },
     benefitsDesc: { type: String },

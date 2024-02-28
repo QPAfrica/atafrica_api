@@ -33,6 +33,7 @@ router.post("/add", async (req, res) => {
         location: req.body.location,
         type: req.body.type,
         company: req.body.company,
+        mainDesc:req.body.main_desc,
         lookingDesc: req.body.looking_desc,
         experienceDesc: req.body.experience_desc,
         benefitsDesc: req.body.benefits_desc,
