@@ -64,7 +64,7 @@ router.post("/add", async (req, res) => {
               <![endif]-->
               <!--[if (gte mso 9)|(IE)]>
           <style type="text/css">
-            body {width: 700px;margin: 0 auto;}
+            body {width: 550px;margin: 0 auto;}
             table {border-collapse: collapse;}
             table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
             img {-ms-interpolation-mode: bicubic;}
@@ -73,13 +73,13 @@ router.post("/add", async (req, res) => {
               <style type="text/css">
             body, p, div {
               font-family: arial,helvetica,sans-serif;
-              font-size: 12px;
+              font-size: 14px;
             }
             body {
-              color: #939598;
+              color: #000000;
             }
             body a {
-              color: #939598;
+              color: #1188E6;
               text-decoration: none;
             }
             p { margin: 0; padding: 0; }
@@ -165,11 +165,11 @@ router.post("/add", async (req, res) => {
               <!--user entered Head Start--><!--End Head user entered-->
             </head>
             <body>
-              <center class="wrapper" data-link-color="#939598" data-body-style="font-size:12px; font-family:arial,helvetica,sans-serif; color:#939598; background-color:#0d0d0d;">
+              <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#f5f5f5;">
                 <div class="webkit">
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#0d0d0d">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#f5f5f5">
                     <tr>
-                      <td valign="top" bgcolor="#0d0d0d" width="100%">
+                      <td valign="top" bgcolor="#f5f5f5" width="100%">
                         <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
                           <tr>
                             <td width="100%">
@@ -178,82 +178,81 @@ router.post("/add", async (req, res) => {
                                   <td>
                                     <!--[if mso]>
             <center>
-            <table><tr><td width="700">
+            <table><tr><td width="550">
           <![endif]-->
-                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:700px;" align="center">
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:550px;" align="center">
                                               <tr>
-                                                <td role="modules-container" style="padding:0px 0px 0px 0px; color:#939598; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+                                                <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#F5F5F5" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
             <tr>
               <td role="module-content">
-                <p></p>
+                <p>We've Received Your Application!</p>
               </td>
             </tr>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="416bc8bf-b58e-40da-9f88-e6372ef66f7a" data-mc-module-version="2019-10-22">
+          </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a452cce7-ee65-4bcb-8303-61e97a73b9af">
             <tbody>
               <tr>
-                <td style="padding:18px 0px 5px 0px; line-height:12px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598">Email not displaying correctly?</span></div>
-        <div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #fc700a"><em><strong>View it</strong></em></span><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598"> in your browser.</span></div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="1cf588b6-50bb-4e96-9094-78072dc27db6">
-            <tbody>
-              <tr>
-                <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
-                  <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="700" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/6aabe8179b53a529/a7574dd2-c8b8-4211-8543-4a20764517c5/1232x338.png">
+                <td style="font-size:6px; line-height:10px; padding:30px 10px 30px 10px;" valign="top" align="left">
+                  <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:25% !important; width:25%; height:auto !important;" width="138" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/6aabe8179b53a529/75fe6958-888d-4c0e-8b7e-8f853c9b4c67/540x184.png">
                 </td>
               </tr>
             </tbody>
-          </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
+          </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 10px 20px 10px;" bgcolor="#FFFFFF" data-distribution="1">
             <tbody>
               <tr role="module-content">
-                <td height="100%" valign="top"><table width="540" style="width:540px; border-spacing:0; border-collapse:collapse; margin:0px 80px 0px 80px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+                <td height="100%" valign="top"><table width="510" style="width:510px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
               <tbody>
                 <tr>
-                  <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743" data-mc-module-version="2019-10-22">
+                  <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="381881a7-aa43-493a-90fc-ff8a053a209e" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:30px 0px 30px 0px; line-height:40px; text-align:inherit; background-color:#ffffff;" height="100%" valign="top" bgcolor="#ffffff" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #151515; font-size: 30px; font-family: &quot;times new roman&quot;, times, serif">Thank You for Applying to ATAfrica!</span></div><div></div></div></td>
+                <td style="padding:10px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Dear ${req.body.first_name},</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="dce1c135-0cce-4722-b204-271ab342fe50">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="6fe76b10-6428-4950-8e0c-8baf7a8d14c2" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:0px 0px 0px 0px;" role="module-content" height="100%" valign="top" bgcolor="">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
-                    <tbody>
-                      <tr>
-                        <td style="padding:0px 0px 1px 0px;" bgcolor="#9d9d9d"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
+                <td style="padding:5px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Thank you for applying for the ${req.body.job_title} role at ATAfrica. We're excited to have received your application and wanted to send you a quick note to confirm its receipt.</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ac6915ec-a120-4043-93dd-d12c843239a4">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="bd65c6fd-fcca-4517-966b-7b997732409d" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:0px 0px 30px 0px;" role="module-content" bgcolor="">
-                </td>
+                <td style="padding:5px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Rest assured, your application is in good hands. Our hiring team is diligently reviewing all submissions, and we'll be reaching out to qualified candidates for further steps in the process.</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743.1.1" data-mc-module-version="2019-10-22">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a6bf769a-8bab-49b2-8909-766d7bcbd411" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Hi ${req.body.first_name},&nbsp;</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Thank you for applying for the ${req.body.job_title} position at ATAfrica. We have received your application and are currently reviewing it.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Our recruitment team carefully considers each application, and we will contact you if your qualifications match our requirements for the position.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">In the meantime, we invite you to learn more about ATAfrica and our mission by visiting our website <a style="text-decoration: underline; color: inherit;" href="https://atafrica.org">atafrica.org</a>.&nbsp;Should you have any questions or require further information, please feel free to contact us at <a style="text-decoration: underline; color: inherit;" href="mailto:info@atafrica.org">info@atafrica.org</a>.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Thank you for your interest in joining ATAfrica. We appreciate your time and effort in applying for a position with us.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Best regards,</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">The ATAfrica Recruitment Team</span><br>
-        &nbsp;</div><div></div></div></td>
+                <td style="padding:5px 0px 20px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">In the meantime, we invite you to explore more about ATAfrica and what sets us apart on our website.</span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="4570014d-fe49-40e3-8613-5cf33b0e96ec">
+              <tbody>
+                <tr>
+                  <td align="center" bgcolor="" class="outer-td" style="padding:0px 0px 0px 0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
+                      <tbody>
+                        <tr>
+                        <td align="center" bgcolor="#333333" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;">
+                          <a href="https://atafrica.org/" style="border:1px solid #33333; border-color:#33333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid; background-color:#333333;" target="_blank">Explore</a>
+                        </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="7483af0e-c6aa-4591-b5b5-3abb55ac1d26" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:20px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">We appreciate your interest in joining our team and look forward to potentially working together.</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c47d93ac-2a5e-427b-8785-8018b215c58e" data-mc-module-version="2019-10-22">
+            <tbody>
+              <tr>
+                <td style="padding:5px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Best,</span></div>
+        <div style="font-family: inherit; text-align: inherit"><span style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt; color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-size: 14px; font-family: helvetica, sans-serif">Team ATAfrica</span></div><div></div></div></td>
               </tr>
             </tbody>
           </table></td>
@@ -262,54 +261,41 @@ router.post("/add", async (req, res) => {
             </table></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f0e65d7e-60e4-4192-b086-0dd194b86025">
+          </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 10px 0px 10px;" bgcolor="#F5F5F5" data-distribution="1">
+            <tbody>
+              <tr role="module-content">
+                <td height="100%" valign="top"><table width="510" style="width:510px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+              <tbody>
+                <tr>
+                  <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f127c490-22b0-4715-9674-51f639b87930" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:0px 0px 50px 0px;" role="module-content" bgcolor="">
-                </td>
+                <td style="padding:10px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">This email is intended to: ${req.body.email}</span><span style="font-family: helvetica, sans-serif; font-size: 12px">&nbsp;</span></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="social" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="67860d35-49ca-4aab-a102-9026fe6e6519">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="fe42f8de-a1e4-4c58-a054-133d265fac20" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td valign="top" style="padding:10px 0px 0px 0px; font-size:6px; line-height:10px; background-color:#0d0d0d;" align="center">
-                  <table align="center" style="-webkit-margin-start:auto;-webkit-margin-end:auto;">
-                    <tbody><tr align="center"><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://www.facebook.com/sendgrid/" target="_blank" alt="Facebook" title="Facebook" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Facebook" title="Facebook" src="https://mc.sendgrid.com/assets/social/white/facebook.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://twitter.com/sendgrid" target="_blank" alt="Twitter" title="Twitter" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Twitter" title="Twitter" src="https://mc.sendgrid.com/assets/social/white/twitter.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://www.instagram.com/sendgrid/" target="_blank" alt="Instagram" title="Instagram" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Instagram" title="Instagram" src="https://mc.sendgrid.com/assets/social/white/instagram.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td></tr></tbody>
-                  </table>
-                </td>
+                <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">If you do not wish to receive this email please <a style="text-decoration: underline, color: inherit" href="">unsubscribe</a>.</span><span style="font-family: helvetica, sans-serif; font-size: 12px">&nbsp;</span></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="afbcec63-8aa9-4c80-ae51-010b68fee214" data-mc-module-version="2019-10-22">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="037169a1-f56e-401a-889a-fa79fc579f01" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:10px 0px 0px 0px; line-height:12px; text-align:inherit; background-color:#0D0D0D;" height="100%" valign="top" bgcolor="#0D0D0D" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>OFFICE ADDRESS LINE: INPUT OFFICE ADDRESS HERE</strong></span></div>
-        <div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>CONTACT INFO: INPUT CONTACT INFORMATION HERE</strong></span></div><div></div></div></td>
+                <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">For more information please visit us at</span><a href="https://atafrica.org/"><span style="font-family: helvetica, sans-serif; font-size: 12px"> </span><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; text-decoration-line: underline; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: #1155cc; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-skip-ink: none; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">https://atafrica.org</span></a></div><div></div></div></td>
               </tr>
             </tbody>
-          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a283e807-5ef8-4ed1-9dad-501454219737">
+          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="363d6947-a084-495e-9d13-c2e7e2d2d6a9" data-mc-module-version="2019-10-22">
             <tbody>
               <tr>
-                <td style="padding:0px 0px 20px 0px;" role="module-content" height="100%" valign="top" bgcolor="#0D0D0D">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
-                    <tbody>
-                      <tr>
-                        <td style="padding:0px 0px 1px 0px;" bgcolor="#939598"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
+                <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">© ATAfrica 2024</span></div>
+        <div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">A Venture Studio for WealthTech in Africa</span></div><div></div></div></td>
+              </tr>
+            </tbody>
+          </table></td>
+                </tr>
+              </tbody>
+            </table></td>
               </tr>
             </tbody>
           </table></td>

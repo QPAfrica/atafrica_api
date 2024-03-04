@@ -11,366 +11,314 @@ const router = express.Router();
 sendGrid.setApiKey(process.env.SEND_GRID_API_KEY);
 
 router.get("/all", async (req, res) => {
-    try {
-        const discussions = await Discussions.find();
-        res.status(201).json(discussions);
-    } catch (error) {
-        res.json(error);
-    }
+  try {
+    const discussions = await Discussions.find();
+    res.status(201).json(discussions);
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 router.get("/single/:id", async (req, res) => {
-    try {
-        const discussion = await Discussions.findById(req.params.id);
-        res.status(201).json(discussion);
-    } catch (err) {
-        res.status(500).json(err.message);
-    }
+  try {
+    const discussion = await Discussions.findById(req.params.id);
+    res.status(201).json(discussion);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 
 router.post("/add", async (req, res) => {
 
-    const newDiscussion = new Discussions({
-        firstName: req.body.first_name,
-        lastName: req.body.last_name,
-        email: req.body.email,
-        phone: req.body.phone,
-        message: req.body.message,
-    });
+  const newDiscussion = new Discussions({
+    firstName: req.body.first_name,
+    lastName: req.body.last_name,
+    email: req.body.email,
+    phone: req.body.phone,
+    message: req.body.message,
+  });
 
-    const messageData = {
-        to: req.body.email,
-        from: "content@atafrica.org",
-        subject: "Message Received",
-        html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-        <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
-            <head>
-              <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-              <!--[if !mso]><!-->
-              <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-              <!--<![endif]-->
-              <!--[if (gte mso 9)|(IE)]>
-              <xml>
-                <o:OfficeDocumentSettings>
-                  <o:AllowPNG/>
-                  <o:PixelsPerInch>96</o:PixelsPerInch>
-                </o:OfficeDocumentSettings>
-              </xml>
-              <![endif]-->
-              <!--[if (gte mso 9)|(IE)]>
-          <style type="text/css">
-            body {width: 700px;margin: 0 auto;}
-            table {border-collapse: collapse;}
-            table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
-            img {-ms-interpolation-mode: bicubic;}
-          </style>
-        <![endif]-->
-              <style type="text/css">
-            body, p, div {
-              font-family: arial,helvetica,sans-serif;
-              font-size: 12px;
-            }
-            body {
-              color: #939598;
-            }
-            body a {
-              color: #939598;
-              text-decoration: none;
-            }
-            p { margin: 0; padding: 0; }
-            table.wrapper {
-              width:100% !important;
-              table-layout: fixed;
-              -webkit-font-smoothing: antialiased;
-              -webkit-text-size-adjust: 100%;
-              -moz-text-size-adjust: 100%;
-              -ms-text-size-adjust: 100%;
-            }
-            img.max-width {
-              max-width: 100% !important;
-            }
-            .column.of-2 {
-              width: 50%;
-            }
-            .column.of-3 {
-              width: 33.333%;
-            }
-            .column.of-4 {
-              width: 25%;
-            }
-            ul ul ul ul  {
-              list-style-type: disc !important;
-            }
-            ol ol {
-              list-style-type: lower-roman !important;
-            }
-            ol ol ol {
-              list-style-type: lower-latin !important;
-            }
-            ol ol ol ol {
-              list-style-type: decimal !important;
-            }
-            @media screen and (max-width:480px) {
-              .preheader .rightColumnContent,
-              .footer .rightColumnContent {
-                text-align: left !important;
-              }
-              .preheader .rightColumnContent div,
-              .preheader .rightColumnContent span,
-              .footer .rightColumnContent div,
-              .footer .rightColumnContent span {
-                text-align: left !important;
-              }
-              .preheader .rightColumnContent,
-              .preheader .leftColumnContent {
-                font-size: 80% !important;
-                padding: 5px 0;
-              }
-              table.wrapper-mobile {
-                width: 100% !important;
-                table-layout: fixed;
-              }
-              img.max-width {
-                height: auto !important;
-                max-width: 100% !important;
-              }
-              a.bulletproof-button {
-                display: block !important;
-                width: auto !important;
-                font-size: 80%;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-              }
-              .columns {
-                width: 100% !important;
-              }
-              .column {
-                display: block !important;
-                width: 100% !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-              }
-              .social-icon-column {
-                display: inline-block !important;
-              }
-            }
-          </style>
-              <!--user entered Head Start--><!--End Head user entered-->
-            </head>
-            <body>
-              <center class="wrapper" data-link-color="#939598" data-body-style="font-size:12px; font-family:arial,helvetica,sans-serif; color:#939598; background-color:#0d0d0d;">
-                <div class="webkit">
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#0d0d0d">
-                    <tr>
-                      <td valign="top" bgcolor="#0d0d0d" width="100%">
-                        <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
-                          <tr>
-                            <td width="100%">
-                              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                  <td>
-                                    <!--[if mso]>
-            <center>
-            <table><tr><td width="700">
+  const messageData = {
+    to: req.body.email,
+    from: "content@atafrica.org",
+    subject: "Message Received",
+    html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+          <!--[if !mso]><!-->
+          <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+          <!--<![endif]-->
+          <!--[if (gte mso 9)|(IE)]>
+          <xml>
+            <o:OfficeDocumentSettings>
+              <o:AllowPNG/>
+              <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+          </xml>
           <![endif]-->
-                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:700px;" align="center">
-                                              <tr>
-                                                <td role="modules-container" style="padding:0px 0px 0px 0px; color:#939598; text-align:left;" bgcolor="#FFFFFF" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+          <!--[if (gte mso 9)|(IE)]>
+      <style type="text/css">
+        body {width: 550px;margin: 0 auto;}
+        table {border-collapse: collapse;}
+        table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+        img {-ms-interpolation-mode: bicubic;}
+      </style>
+    <![endif]-->
+          <style type="text/css">
+        body, p, div {
+          font-family: arial,helvetica,sans-serif;
+          font-size: 14px;
+        }
+        body {
+          color: #000000;
+        }
+        body a {
+          color: #1188E6;
+          text-decoration: none;
+        }
+        p { margin: 0; padding: 0; }
+        table.wrapper {
+          width:100% !important;
+          table-layout: fixed;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-size-adjust: 100%;
+          -moz-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+        }
+        img.max-width {
+          max-width: 100% !important;
+        }
+        .column.of-2 {
+          width: 50%;
+        }
+        .column.of-3 {
+          width: 33.333%;
+        }
+        .column.of-4 {
+          width: 25%;
+        }
+        ul ul ul ul  {
+          list-style-type: disc !important;
+        }
+        ol ol {
+          list-style-type: lower-roman !important;
+        }
+        ol ol ol {
+          list-style-type: lower-latin !important;
+        }
+        ol ol ol ol {
+          list-style-type: decimal !important;
+        }
+        @media screen and (max-width:480px) {
+          .preheader .rightColumnContent,
+          .footer .rightColumnContent {
+            text-align: left !important;
+          }
+          .preheader .rightColumnContent div,
+          .preheader .rightColumnContent span,
+          .footer .rightColumnContent div,
+          .footer .rightColumnContent span {
+            text-align: left !important;
+          }
+          .preheader .rightColumnContent,
+          .preheader .leftColumnContent {
+            font-size: 80% !important;
+            padding: 5px 0;
+          }
+          table.wrapper-mobile {
+            width: 100% !important;
+            table-layout: fixed;
+          }
+          img.max-width {
+            height: auto !important;
+            max-width: 100% !important;
+          }
+          a.bulletproof-button {
+            display: block !important;
+            width: auto !important;
+            font-size: 80%;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+          .columns {
+            width: 100% !important;
+          }
+          .column {
+            display: block !important;
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+          .social-icon-column {
+            display: inline-block !important;
+          }
+        }
+      </style>
+          <!--user entered Head Start--><!--End Head user entered-->
+        </head>
+        <body>
+          <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#f5f5f5;">
+            <div class="webkit">
+              <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#f5f5f5">
+                <tr>
+                  <td valign="top" bgcolor="#f5f5f5" width="100%">
+                    <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="100%">
+                          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td>
+                                <!--[if mso]>
+        <center>
+        <table><tr><td width="550">
+      <![endif]-->
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:550px;" align="center">
+                                          <tr>
+                                            <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#F5F5F5" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+        <tr>
+          <td role="module-content">
+            <p>We've received your message and will respond shortly. Explore our wealthtech products in the meantime!</p>
+          </td>
+        </tr>
+      </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a452cce7-ee65-4bcb-8303-61e97a73b9af">
+        <tbody>
+          <tr>
+            <td style="font-size:6px; line-height:10px; padding:30px 10px 30px 10px;" valign="top" align="left">
+              <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:25% !important; width:25%; height:auto !important;" width="138" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/6aabe8179b53a529/75fe6958-888d-4c0e-8b7e-8f853c9b4c67/540x184.png">
+            </td>
+          </tr>
+        </tbody>
+      </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 10px 20px 10px;" bgcolor="#FFFFFF" data-distribution="1">
+        <tbody>
+          <tr role="module-content">
+            <td height="100%" valign="top"><table width="510" style="width:510px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+          <tbody>
             <tr>
-              <td role="module-content">
-                <p></p>
+              <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="381881a7-aa43-493a-90fc-ff8a053a209e" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:10px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Dear ${req.body.first_name},</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="6fe76b10-6428-4950-8e0c-8baf7a8d14c2" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:5px 0px 5px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">Thank you for reaching out to ATAfrica. We have received your message and will get back to you as soon as possible. Your inquiry is important to us, and we appreciate your patience.</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="bd65c6fd-fcca-4517-966b-7b997732409d" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:5px 0px 20px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #222222; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 14px">In the meantime, we invite you to explore our website and learn more about our wealthtech products</span><span style="font-family: helvetica, sans-serif; font-size: 14px">&nbsp;</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="4570014d-fe49-40e3-8613-5cf33b0e96ec">
+          <tbody>
+            <tr>
+              <td align="center" bgcolor="" class="outer-td" style="padding:0px 0px 0px 0px;">
+                <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
+                  <tbody>
+                    <tr>
+                    <td align="center" bgcolor="#333333" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;">
+                      <a href="https://atafrica.org/" style="border:1px solid #33333; border-color:#33333; border-radius:6px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid; background-color:#333333;" target="_blank">Explore</a>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
               </td>
             </tr>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="416bc8bf-b58e-40da-9f88-e6372ef66f7a" data-mc-module-version="2019-10-22">
-            <tbody>
-              <tr>
-                <td style="padding:18px 0px 5px 0px; line-height:12px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598">Email not displaying correctly?</span></div>
-        <div style="font-family: inherit; text-align: right"><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #fc700a"><em><strong>View it</strong></em></span><span style="font-family: &quot;times new roman&quot;, times, serif; font-size: 10px; color: #939598"> in your browser.</span></div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="1cf588b6-50bb-4e96-9094-78072dc27db6">
-            <tbody>
-              <tr>
-                <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="center">
-                  <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="700" alt="" data-proportionally-constrained="true" data-responsive="true" src="http://cdn.mcauto-images-production.sendgrid.net/6aabe8179b53a529/a7574dd2-c8b8-4211-8543-4a20764517c5/1232x338.png">
-                </td>
-              </tr>
-            </tbody>
-          </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 0px 0px 0px;" bgcolor="#FFFFFF" data-distribution="1">
-            <tbody>
-              <tr role="module-content">
-                <td height="100%" valign="top"><table width="540" style="width:540px; border-spacing:0; border-collapse:collapse; margin:0px 80px 0px 80px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-              <tbody>
-                <tr>
-                  <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743" data-mc-module-version="2019-10-22">
-            <tbody>
-              <tr>
-                <td style="padding:30px 0px 30px 0px; line-height:40px; text-align:inherit; background-color:#ffffff;" height="100%" valign="top" bgcolor="#ffffff" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #151515; font-family: &quot;times new roman&quot;, times, serif; font-size: 30px">Thank You for Reaching Out to ATAfrica</span></div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="dce1c135-0cce-4722-b204-271ab342fe50">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 0px 0px;" role="module-content" height="100%" valign="top" bgcolor="">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
-                    <tbody>
-                      <tr>
-                        <td style="padding:0px 0px 1px 0px;" bgcolor="#9d9d9d"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="ac6915ec-a120-4043-93dd-d12c843239a4">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 30px 0px;" role="module-content" bgcolor="">
-                </td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743.1.1" data-mc-module-version="2019-10-22">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Dear ${req.body.first_name},</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Thank you for reaching out to ATAfrica. We have received your message and will get back to you as soon as possible. Your inquiry is important to us, and we appreciate your patience.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">If your matter is urgent, please feel free to contact us directly at [add Phone Number here] or [add Contact Email here].</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: start"><span style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1px; --tw-scale-y: 1px; --tw-scroll-snap-strictness: proximity; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(69,89,164,.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; color: #0d0d0d; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">In the meantime, we invite you to explore our website via the below button to learn more about our services and how we can assist you in your entrepreneurial journey.</span></div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="3480c647-733b-4db9-8123-d2a2f6cc7edb">
-              <tbody>
-                <tr>
-                  <td align="center" bgcolor="" class="outer-td" style="padding:50px 0px 50px 0px;">
-                    <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
-                      <tbody>
-                        <tr>
-                        <td align="center" bgcolor="#0d0d0d" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;">
-                          <a href="" style="background-color:#0d0d0d; border:1px solid #333333; border-color:#333333; border-radius:0px; border-width:1px; color:#ffffff; display:inline-block; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style:solid;" target="_blank">DISCOVER MORE</a>
+          </tbody>
+        </table></td>
+            </tr>
+          </tbody>
+        </table></td>
+          </tr>
+        </tbody>
+      </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 10px 0px 10px;" bgcolor="#F5F5F5" data-distribution="1">
+        <tbody>
+          <tr role="module-content">
+            <td height="100%" valign="top"><table width="510" style="width:510px; border-spacing:0; border-collapse:collapse; margin:0px 10px 0px 10px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+          <tbody>
+            <tr>
+              <td style="padding:0px;margin:0px;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f127c490-22b0-4715-9674-51f639b87930" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:10px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">This email is intended to: ${req.body.email}</span><span style="font-family: helvetica, sans-serif; font-size: 12px">&nbsp;</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="fe42f8de-a1e4-4c58-a054-133d265fac20" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">If you do not wish to receive this email please <a style="text-decoration: underline, color: inherit" href="">unsubscribe</a>.</span><span style="font-family: helvetica, sans-serif; font-size: 12px">&nbsp;</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="037169a1-f56e-401a-889a-fa79fc579f01" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">For more information please visit us at</span><a href="https://atafrica.org/"><span style="font-family: helvetica, sans-serif; font-size: 12px"> </span><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; text-decoration-line: underline; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; color: #1155cc; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-skip-ink: none; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">https://atafrica.org</span></a></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="363d6947-a084-495e-9d13-c2e7e2d2d6a9" data-mc-module-version="2019-10-22">
+        <tbody>
+          <tr>
+            <td style="padding:1px 0px 1px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">© ATAfrica 2024</span></div>
+    <div style="font-family: inherit; text-align: center"><span style="line-height: 1.656; margin-top: 0pt; margin-bottom: 0pt; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; vertical-align: baseline; white-space-collapse: preserve; text-wrap: wrap; font-family: helvetica, sans-serif; font-size: 12px">A Venture Studio for WealthTech in Africa</span></div><div></div></div></td>
+          </tr>
+        </tbody>
+      </table></td>
+            </tr>
+          </tbody>
+        </table></td>
+          </tr>
+        </tbody>
+      </table></td>
+                                          </tr>
+                                        </table>
+                                        <!--[if mso]>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </center>
+                                <![endif]-->
+                              </td>
+                            </tr>
+                          </table>
                         </td>
-                        </tr>
-                      </tbody>
+                      </tr>
                     </table>
                   </td>
                 </tr>
-              </tbody>
-            </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="33ceb5a6-0fc6-40a3-8579-4b77b8a14743.1.1.1" data-mc-module-version="2019-10-22">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: start"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Thank you for considering ATAfrica. We look forward to connecting with you soon.</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial">Best regards,</span></div>
-        <div style="font-family: inherit; text-align: start"><br></div>
-        <div style="font-family: inherit; text-align: inherit; margin-left: 0px"><span style="box-sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 1.25em; margin-right: 0px; margin-bottom: 1.25em; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-alternates: inherit; font-variant-position: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: Söhne, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Ubuntu, Cantarell, &quot;Noto Sans&quot;, sans-serif, &quot;Helvetica Neue&quot;, Arial, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-optical-sizing: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 16px; vertical-align: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(227, 227, 227); border-right-color: rgb(227, 227, 227); border-bottom-color: rgb(227, 227, 227); border-left-color: rgb(227, 227, 227); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; color: #0d0d0d; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve; text-wrap: wrap; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial"><br>
-        The ATAfrica Team</span> &nbsp;</div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table></td>
-                </tr>
-              </tbody>
-            </table></td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f0e65d7e-60e4-4192-b086-0dd194b86025">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 50px 0px;" role="module-content" bgcolor="">
-                </td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="social" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="67860d35-49ca-4aab-a102-9026fe6e6519">
-            <tbody>
-              <tr>
-                <td valign="top" style="padding:10px 0px 0px 0px; font-size:6px; line-height:10px; background-color:#0d0d0d;" align="center">
-                  <table align="center" style="-webkit-margin-start:auto;-webkit-margin-end:auto;">
-                    <tbody><tr align="center"><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://www.facebook.com/sendgrid/" target="_blank" alt="Facebook" title="Facebook" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Facebook" title="Facebook" src="https://mc.sendgrid.com/assets/social/white/facebook.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://twitter.com/sendgrid" target="_blank" alt="Twitter" title="Twitter" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Twitter" title="Twitter" src="https://mc.sendgrid.com/assets/social/white/twitter.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td><td style="padding: 0px 5px;" class="social-icon-column">
-              <a role="social-icon-link" href="https://www.instagram.com/sendgrid/" target="_blank" alt="Instagram" title="Instagram" style="display:inline-block; background-color:#696969; height:22px; width:22px; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px;">
-                <img role="social-icon" alt="Instagram" title="Instagram" src="https://mc.sendgrid.com/assets/social/white/instagram.png" style="height:22px; width:22px;" height="22" width="22">
-              </a>
-            </td></tr></tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="afbcec63-8aa9-4c80-ae51-010b68fee214" data-mc-module-version="2019-10-22">
-            <tbody>
-              <tr>
-                <td style="padding:10px 0px 0px 0px; line-height:12px; text-align:inherit; background-color:#0D0D0D;" height="100%" valign="top" bgcolor="#0D0D0D" role="module-content"><div><div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>OFFICE ADDRESS LINE: INPUT OFFICE ADDRESS HERE</strong></span></div>
-        <div style="font-family: inherit; text-align: center"><span style="font-size: 10px; color: #696969"><strong>CONTACT INFO: INPUT CONTACT INFORMATION HERE</strong></span></div><div></div></div></td>
-              </tr>
-            </tbody>
-          </table><table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="a283e807-5ef8-4ed1-9dad-501454219737">
-            <tbody>
-              <tr>
-                <td style="padding:0px 0px 20px 0px;" role="module-content" height="100%" valign="top" bgcolor="#0D0D0D">
-                  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:1px; font-size:1px;">
-                    <tbody>
-                      <tr>
-                        <td style="padding:0px 0px 1px 0px;" bgcolor="#939598"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-            </tbody>
-          </table></td>
-                                              </tr>
-                                            </table>
-                                            <!--[if mso]>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </center>
-                                    <![endif]-->
-                                  </td>
-                                </tr>
-                              </table>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </center>
-            </body>
-          </html>`
-    }
+              </table>
+            </div>
+          </center>
+        </body>
+      </html>`
+  }
 
 
-    try {
-        const savedDiscussion = await newDiscussion.save();
-        await sendGrid.send(messageData)
-        res.status(201).json({
-            data: savedDiscussion,
-            msg: "Discussion Creation Successful and email sent.",
-        });
-    } catch (error) {
-        res.json(error);
-    }
+  try {
+    const savedDiscussion = await newDiscussion.save();
+    await sendGrid.send(messageData)
+    res.status(201).json({
+      data: savedDiscussion,
+      msg: "Discussion Creation Successful and email sent.",
+    });
+  } catch (error) {
+    res.json(error);
+  }
 });
 
 router.delete("/delete/:id", async (req, res) => {
-    try {
-        await Discussions.findByIdAndDelete(req.params.id);
-        res.status(200).json("Discussion has been deleted");
-    } catch (err) {
-        res.status(500).json(err.message);
-    }
+  try {
+    await Discussions.findByIdAndDelete(req.params.id);
+    res.status(200).json("Discussion has been deleted");
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 })
 
 export default router;
