@@ -366,5 +366,14 @@ router.post("/", async (req, res) => {
     }
 })
 
+router.get("/all", async (req, res) => {
+  try {
+      const emails = await NewsletterEmails.find();
+      res.status(201).json(emails);
+  } catch (error) {
+      res.json(error);
+  }
+});
+
 
 export default router;
