@@ -303,5 +303,17 @@ router.get("/all", requireAdmin, async (req, res) => {
   }
 });
 
+router.delete("/:id", requireAdmin, async (req, res) => {
+  try {
+    const deleted = await NewsletterEmails.findByIdAndDelete(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ msg: "Newsletter subscriber not found" });
+    }
+    res.status(200).json({ msg: "Subscriber has been removed" });
+  } catch (error) {
+    res.status(500).json({ msg: "Failed to delete newsletter subscriber" });
+  }
+});
+
 
 export default router;
