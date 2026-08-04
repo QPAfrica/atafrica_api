@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import { Applications } from "../models/Applications.js";
 import sendGrid from "@sendgrid/mail";
+import { requireAdmin } from "../middleware/requireAdmin.js";
 
 
 dotenv.config();
@@ -10,21 +11,21 @@ const router = express.Router();
 
 sendGrid.setApiKey(process.env.SEND_GRID_API_KEY);
 
-router.get("/all", async (req, res) => {
+router.get("/all", requireAdmin, async (req, res) => {
     try {
         const applications = await Applications.find();
-        res.status(201).json(applications);
+        res.status(200).json(applications);
     } catch (error) {
-        res.json(error);
+        res.status(500).json({ msg: "Failed to fetch applications" });
     }
 });
 
-router.get("/single/:id", async (req, res) => {
+router.get("/single/:id", requireAdmin, async (req, res) => {
     try {
         const application = await Applications.findById(req.params.id);
-        res.status(201).json(application);
+        res.status(200).json(application);
     } catch (err) {
-        res.status(500).json(err.message);
+        res.status(500).json({ msg: "Failed to fetch application" });
     }
 });
 
@@ -334,20 +335,20 @@ router.post("/add", async (req, res) => {
             msg: "Application Creation Successful and Email Sent",
         });
     } catch (error) {
-        res.json(error);
+        res.status(500).json({ msg: "Application creation failed" });
     }
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id", requireAdmin, async (req, res) => {
     try {
         await Applications.findByIdAndDelete(req.params.id);
-        res.status(200).json("Job has been deleted");
+        res.status(200).json("Application has been deleted");
     } catch (err) {
-        res.status(500).json(err.message);
+        res.status(500).json({ msg: "Failed to delete application" });
     }
 })
 
-router.put("/update/:id", async (req, res) => {
+router.put("/update/:id", requireAdmin, async (req, res) => {
     try {
         const updatedApplication = await Applications.findByIdAndUpdate(
             req.params.id,
@@ -356,7 +357,7 @@ router.put("/update/:id", async (req, res) => {
         );
         res.status(200).json(updatedApplication);
     } catch (err) {
-        res.status(500).json(err.message);
+        res.status(500).json({ msg: "Failed to update application" });
     }
 });
 

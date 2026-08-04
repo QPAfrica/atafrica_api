@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import { Discussions } from "../models/Discussions.js";
 import sendGrid from "@sendgrid/mail";
+import { requireAdmin } from "../middleware/requireAdmin.js";
 
 
 dotenv.config();
@@ -10,21 +11,21 @@ const router = express.Router();
 
 sendGrid.setApiKey(process.env.SEND_GRID_API_KEY);
 
-router.get("/all", async (req, res) => {
+router.get("/all", requireAdmin, async (req, res) => {
   try {
     const discussions = await Discussions.find();
-    res.status(201).json(discussions);
+    res.status(200).json(discussions);
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ msg: "Failed to fetch discussions" });
   }
 });
 
-router.get("/single/:id", async (req, res) => {
+router.get("/single/:id", requireAdmin, async (req, res) => {
   try {
     const discussion = await Discussions.findById(req.params.id);
-    res.status(201).json(discussion);
+    res.status(200).json(discussion);
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json({ msg: "Failed to fetch discussion" });
   }
 });
 
@@ -311,16 +312,16 @@ router.post("/add", async (req, res) => {
       msg: "Discussion Creation Successful and email sent.",
     });
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ msg: "Discussion creation failed" });
   }
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id", requireAdmin, async (req, res) => {
   try {
     await Discussions.findByIdAndDelete(req.params.id);
     res.status(200).json("Discussion has been deleted");
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json({ msg: "Failed to delete discussion" });
   }
 })
 

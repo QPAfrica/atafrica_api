@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 import express from "express";
 import sendGrid from "@sendgrid/mail";
 import { NewsletterEmails } from "../models/NewsletterEmails.js";
+import { requireAdmin } from "../middleware/requireAdmin.js";
 
 dotenv.config();
 
@@ -293,12 +294,12 @@ router.post("/", async (req, res) => {
   }
 })
 
-router.get("/all", async (req, res) => {
+router.get("/all", requireAdmin, async (req, res) => {
   try {
     const emails = await NewsletterEmails.find();
-    res.status(201).json(emails);
+    res.status(200).json(emails);
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ msg: "Failed to fetch newsletter emails" });
   }
 });
 

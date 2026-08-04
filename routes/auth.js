@@ -1,16 +1,21 @@
 import * as dotenv from "dotenv";
 import express from "express";
-import { Users} from "../models/Users.js"
+import { Users } from "../models/Users.js";
 import CryptoJS from "crypto-js";
-
+import { requireAdmin } from "../middleware/requireAdmin.js";
 
 dotenv.config();
 
 const router = express.Router();
 
+function sanitizeUser(user) {
+  if (!user) return user;
+  const obj = typeof user.toObject === "function" ? user.toObject() : { ...user };
+  delete obj.password;
+  return obj;
+}
 
 router.post("/register", async (req, res) => {
-
   const newUser = new Users({
     email: req.body.email,
     password: CryptoJS.AES.encrypt(
@@ -19,22 +24,23 @@ router.post("/register", async (req, res) => {
     ).toString(),
   });
 
-
   try {
     const savedUser = await newUser.save();
     res.status(201).json({
-      data: savedUser,
+      data: sanitizeUser(savedUser),
       msg: "Account Creation Successful",
     });
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ msg: "Account creation failed" });
   }
 });
 
 router.post("/login", async (req, res) => {
   try {
     const user = await Users.findOne({ email: req.body.email });
-    !user && res.status(401).json("Wrong Email!!!");
+    if (!user) {
+      return res.status(401).json("Wrong Email!!!");
+    }
 
     const decryptedPassword = CryptoJS.AES.decrypt(
       user.password,
@@ -43,41 +49,43 @@ router.post("/login", async (req, res) => {
 
     const password = decryptedPassword.toString(CryptoJS.enc.Utf8);
 
-    password !== req.body.password && res.status(401).json("Wrong Password!!!");
+    if (password !== req.body.password) {
+      return res.status(401).json("Wrong Password!!!");
+    }
 
     res.status(200).json(user.email);
   } catch (err) {
-    res.json(err);
+    res.status(500).json({ msg: "Login failed" });
   }
 });
 
-
-router.get("/users/:id", async (req, res) => {
+router.get("/users/:id", requireAdmin, async (req, res) => {
   try {
-    const user = await Users.findOne({ email: req.params.id });
-    res.status(201).json(user);
+    const user = await Users.findOne({ email: req.params.id }).select(
+      "-password"
+    );
+    res.status(200).json(user);
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json({ msg: "Failed to fetch user" });
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", requireAdmin, async (req, res) => {
   try {
-    const user = await Users.find();
-    res.status(201).json(user);
+    const users = await Users.find().select("-password");
+    res.status(200).json(users);
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json({ msg: "Failed to fetch users" });
   }
 });
 
-
-router.delete("/users/:id", async (req, res) => {
+router.delete("/users/:id", requireAdmin, async (req, res) => {
   try {
     await Users.findOneAndDelete({ email: req.params.id });
     res.status(200).json("User has been deleted");
   } catch (err) {
-    res.status(500).json(err.message);
+    res.status(500).json({ msg: "Failed to delete user" });
   }
-})
+});
 
 export default router;
