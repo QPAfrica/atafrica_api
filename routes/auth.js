@@ -8,33 +8,6 @@ dotenv.config();
 
 const router = express.Router();
 
-function sanitizeUser(user) {
-  if (!user) return user;
-  const obj = typeof user.toObject === "function" ? user.toObject() : { ...user };
-  delete obj.password;
-  return obj;
-}
-
-router.post("/register", async (req, res) => {
-  const newUser = new Users({
-    email: req.body.email,
-    password: CryptoJS.AES.encrypt(
-      req.body.password,
-      process.env.SECRET_KEY
-    ).toString(),
-  });
-
-  try {
-    const savedUser = await newUser.save();
-    res.status(201).json({
-      data: sanitizeUser(savedUser),
-      msg: "Account Creation Successful",
-    });
-  } catch (error) {
-    res.status(500).json({ msg: "Account creation failed" });
-  }
-});
-
 router.post("/login", async (req, res) => {
   try {
     const user = await Users.findOne({ email: req.body.email });
