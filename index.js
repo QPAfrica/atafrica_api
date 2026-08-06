@@ -20,7 +20,7 @@ mongoose
 
 const allowedOrigins = (
   process.env.ALLOWED_ORIGINS ||
-  "http://localhost:3000,https://www.atafrica.org,https://atafrica.org"
+  "http://localhost:3000,http://localhost:3001,https://www.atafrica.org,https://atafrica.org,https://saturday.ng,https://www.saturday.ng"
 )
   .split(",")
   .map((origin) => origin.trim())
