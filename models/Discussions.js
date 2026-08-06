@@ -6,10 +6,11 @@ const DiscussionsSchema = new mongoose.Schema(
     lastName: { type: String },
     email: { type: String },
     phone: { type: String },
+    subject: { type: String },
     message: { type: String },
     source: {
       type: String,
-      enum: ["atafrica", "saturday"],
+      enum: ["atafrica", "saturday", "ft9ja", "clipperfc"],
       default: "atafrica",
     },
   },

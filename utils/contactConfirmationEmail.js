@@ -1,4 +1,4 @@
-const ALLOWED_SOURCES = new Set(["atafrica", "saturday"]);
+const ALLOWED_SOURCES = new Set(["atafrica", "saturday", "ft9ja", "clipperfc"]);
 
 export function normalizeContactSource(raw) {
   const source = String(raw || "atafrica")
@@ -27,6 +27,26 @@ function getBrandConfig(source) {
       siteUrl: "https://saturday.ng",
       copyright: `© Saturday ${year}`,
       tagline: "Where Naija meets over dinner.",
+      logoUrl: "",
+    };
+  }
+
+  if (source === "ft9ja") {
+    return {
+      fromEmail: process.env.FT9JA_FROM_EMAIL || "traders@ft9ja.com",
+      fromName: "FT9ja",
+      subject: "We've received your message",
+      preheader:
+        "We've received your message and will respond shortly.",
+      bodyThankYou:
+        "Thank you for reaching out to FT9ja. We have received your message and will get back to you as soon as possible. Your inquiry is important to us, and we appreciate your patience.",
+      bodyExplore:
+        "In the meantime, you can visit your dashboard or our help resources for common account and payout questions.",
+      ctaUrl: "https://ft9ja.com/",
+      ctaLabel: "Visit FT9ja",
+      siteUrl: "https://ft9ja.com",
+      copyright: `© FT9ja ${year}`,
+      tagline: "Funded trading opportunities for African traders.",
       logoUrl: "",
     };
   }

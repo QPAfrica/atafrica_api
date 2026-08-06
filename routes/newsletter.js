@@ -3,6 +3,7 @@ import express from "express";
 import sendGrid from "@sendgrid/mail";
 import { NewsletterEmails } from "../models/NewsletterEmails.js";
 import { requireAdmin } from "../middleware/requireAdmin.js";
+import { normalizeNewsletterSource } from "../utils/newsletterSource.js";
 
 dotenv.config();
 
@@ -12,8 +13,11 @@ sendGrid.setApiKey(process.env.SEND_GRID_API_KEY)
 
 router.post("/", async (req, res) => {
   if (!req.body.email) {
-    res.status(500).json("Email is required")
+    return res.status(400).json({ msg: "Email is required" });
   }
+
+  const source = normalizeNewsletterSource(req.body.source);
+  const skipConfirmationEmail = source === "clipperfc";
 
   const messageData = {
     to: req.body.email,
@@ -280,23 +284,28 @@ router.post("/", async (req, res) => {
 
   const newEmail = new NewsletterEmails({
     email: req.body.email,
+    source,
   });
 
   try {
     const savedEmail = await newEmail.save();
-    await sendGrid.send(messageData)
+    if (!skipConfirmationEmail) {
+      await sendGrid.send(messageData);
+    }
     res.status(201).json({
       data: savedEmail,
-      msg: "Email has been sent",
+      msg: skipConfirmationEmail
+        ? "Subscription saved"
+        : "Email has been sent",
     });
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ msg: "Newsletter subscription failed" });
   }
 })
 
 router.get("/all", requireAdmin, async (req, res) => {
   try {
-    const emails = await NewsletterEmails.find();
+    const emails = await NewsletterEmails.find().sort({ createdAt: -1 });
     res.status(200).json(emails);
   } catch (error) {
     res.status(500).json({ msg: "Failed to fetch newsletter emails" });
