@@ -1,4 +1,10 @@
-const ALLOWED_SOURCES = new Set(["atafrica", "saturday", "ft9ja", "clipperfc"]);
+const ALLOWED_SOURCES = new Set([
+  "atafrica",
+  "saturday",
+  "ft9ja",
+  "clipperfc",
+  "qpafrica",
+]);
 
 export function normalizeContactSource(raw) {
   const source = String(raw || "atafrica")

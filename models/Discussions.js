@@ -10,7 +10,7 @@ const DiscussionsSchema = new mongoose.Schema(
     message: { type: String },
     source: {
       type: String,
-      enum: ["atafrica", "saturday", "ft9ja", "clipperfc"],
+      enum: ["atafrica", "saturday", "ft9ja", "clipperfc", "qpafrica"],
       default: "atafrica",
     },
   },

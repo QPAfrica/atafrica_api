@@ -5,7 +5,7 @@ const NewsletterEmailsSchema = new mongoose.Schema(
     email: { type: String, required: true },
     source: {
       type: String,
-      enum: ["atafrica", "clipperfc"],
+      enum: ["atafrica", "clipperfc", "qpafrica", "ft9ja-hero"],
       default: "atafrica",
     },
   },

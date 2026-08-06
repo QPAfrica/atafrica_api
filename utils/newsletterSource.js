@@ -1,4 +1,9 @@
-const ALLOWED_SOURCES = new Set(["atafrica", "clipperfc"]);
+const ALLOWED_SOURCES = new Set([
+  "atafrica",
+  "clipperfc",
+  "qpafrica",
+  "ft9ja-hero",
+]);
 
 export function normalizeNewsletterSource(raw) {
   const source = String(raw || "atafrica")

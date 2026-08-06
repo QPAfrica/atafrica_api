@@ -149,7 +149,8 @@ router.get("/single/:id", requireAdmin, async (req, res) => {
 router.post("/add", async (req, res) => {
   const source = normalizeContactSource(req.body.source);
   // Product backends own their outbound mail; ClipperFC opted out of API confirmations.
-  const skipConfirmationEmail = source === "ft9ja" || source === "clipperfc";
+  const skipConfirmationEmail =
+    source === "ft9ja" || source === "clipperfc" || source === "qpafrica";
 
   const newDiscussion = new Discussions({
     firstName: req.body.first_name,

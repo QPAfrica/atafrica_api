@@ -17,7 +17,10 @@ router.post("/", async (req, res) => {
   }
 
   const source = normalizeNewsletterSource(req.body.source);
-  const skipConfirmationEmail = source === "clipperfc";
+  const skipConfirmationEmail =
+    source === "clipperfc" ||
+    source === "qpafrica" ||
+    source === "ft9ja-hero";
 
   const messageData = {
     to: req.body.email,
