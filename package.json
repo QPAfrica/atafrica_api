@@ -10,13 +10,15 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "create-user": "node scripts/create-user.js"
+    "create-user": "node scripts/create-user.js",
+    "classify-backlog": "node scripts/classify-backlog.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^8.1.1",
+    "@typesafe-ai/sdk": "^0.7.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
